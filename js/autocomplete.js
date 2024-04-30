@@ -2,7 +2,7 @@ $(document).ready(function () {
   $("#cityInput").autocomplete({
     source: function (request, response) {
       fetch(
-        "http://api.weatherapi.com/v1/search.json?key=f855bd7413894855a3c85713233012&q=" +
+        "https://api.weatherapi.com/v1/search.json?key=f855bd7413894855a3c85713233012&q=" +
           request.term
       )
         .then((response) => {
