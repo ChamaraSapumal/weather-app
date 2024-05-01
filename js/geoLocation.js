@@ -1,4 +1,5 @@
 const apiKey = "f855bd7413894855a3c85713233012";
+let geoLocationCompletedEvent = new Event("geoLocationCompleted");
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -16,6 +17,7 @@ function showPosition(position) {
   document.getElementById("lon").innerHTML = longitude;
 
   currentLocationWeather(latitude, longitude);
+  document.dispatchEvent(geoLocationCompletedEvent);
 }
 
 function currentLocationWeather(latitude, longitude) {
