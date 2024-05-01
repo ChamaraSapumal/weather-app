@@ -20,8 +20,7 @@ function run() {
     },
   };
 
-  let url =
-    "https://cors.bridged.cc/https://api.weatherapi.com/v1/forecast.json?";
+  let url = "https://api.weatherapi.com/v1/forecast.json?";
 
   if (langParam !== "") {
     url += langParam + "&";
