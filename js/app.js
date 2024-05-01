@@ -15,9 +15,13 @@ function run() {
   let req = {
     method: `GET`,
     mode: "cors", // Specify CORS mode
+    headers: {
+      Origin: "https://chamarasapumal.github.io/weather-app/",
+    },
   };
 
-  let url = "https://api.weatherapi.com/v1/forecast.json?";
+  let url =
+    "https://cors.bridged.cc/https://api.weatherapi.com/v1/forecast.json?";
 
   if (langParam !== "") {
     url += langParam + "&";
