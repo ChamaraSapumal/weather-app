@@ -1,20 +1,15 @@
-let url =
-  "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?";
-
-console.log(apiKey);
-
 function run() {
   let searchVal = document.getElementById("cityInput").value;
   let selectedLan = document.getElementById("languageSelect").value;
 
+  let langParam = ""; // Initialize an empty string to store the language parameter
+
   if (selectedLan == "en") {
-    url += `lang=en`;
-  }
-  if (selectedLan == "si") {
-    url += `lang=si`;
-  }
-  if (selectedLan == "tam") {
-    url += `lang=ta`;
+    langParam = "lang=en";
+  } else if (selectedLan == "si") {
+    langParam = "lang=si";
+  } else if (selectedLan == "tam") {
+    langParam = "lang=ta";
   }
 
   let req = {
@@ -22,8 +17,15 @@ function run() {
     mode: "cors", // Specify CORS mode
   };
 
+  let url =
+    "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?";
+
+  if (langParam !== "") {
+    url += langParam + "&";
+  }
+
   fetch(
-    `${url}&key=${apiKey}&q=${searchVal}`,
+    `${url}key=${apiKey}&q=${searchVal}`,
     req // Pass the request object directly
   )
     .then((res) => res.json())
