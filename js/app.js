@@ -18,7 +18,7 @@ function run() {
   };
 
   let url =
-    "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?";
+    "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/forecast.json?";
 
   if (langParam !== "") {
     url += langParam + "&";
@@ -33,10 +33,12 @@ function run() {
       console.log(data);
 
       document.getElementById("location-name").innerHTML = data.location.name;
-      document.getElementById("temp").innerHTML = data.current.temp_c;
+      document.getElementById("temp").innerHTML = data.current.temp_c + "&deg;";
       document.getElementById("txt-el").innerHTML = data.current.condition.text;
-      document.getElementById("lat").innerHTML = data.location.lat;
-      document.getElementById("lon").innerHTML = data.location.lon;
+      document.getElementById("high").innerHTML =
+        data.forecast.forecastday[0].day.maxtemp_c + "&deg;";
+      document.getElementById("low").innerHTML =
+        data.forecast.forecastday[0].day.mintemp_c + "&deg;";
     })
     .catch((error) => console.log("error", error));
 }
