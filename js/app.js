@@ -1,13 +1,30 @@
+let url =
+  "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?";
+
+console.log(apiKey);
+
 function run() {
   let searchVal = document.getElementById("cityInput").value;
+  let selectedLan = document.getElementById("languageSelect").value;
+
+  if (selectedLan == "en") {
+    url += `lang=en`;
+  }
+  if (selectedLan == "si") {
+    url += `lang=si`;
+  }
+  if (selectedLan == "tam") {
+    url += `lang=ta`;
+  }
 
   let req = {
     method: `GET`,
+    mode: "cors", // Specify CORS mode
   };
 
   fetch(
-    `https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${searchVal}`,
-    req
+    `${url}&key=${apiKey}&q=${searchVal}`,
+    req // Pass the request object directly
   )
     .then((res) => res.json())
     .then((data) => {
