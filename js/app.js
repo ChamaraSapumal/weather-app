@@ -17,8 +17,7 @@ function run() {
     mode: "cors", // Specify CORS mode
   };
 
-  let url =
-    "https://cors-anywhere.herokuapp.com/http://api.weatherapi.com/v1/forecast.json?";
+  let url = "https://api.weatherapi.com/v1/forecast.json?";
 
   if (langParam !== "") {
     url += langParam + "&";
