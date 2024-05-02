@@ -57,7 +57,7 @@ function currentLocationWeather(latitude, longitude) {
           listItem.classList.add("border");
           listItem.classList.add("border-info");
 
-          listItem.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          listItem.scrollIntoView({ behavior: "auto", block: "nearest" });
         }
         const div = document.createElement("div");
         div.classList.add("border-end");
