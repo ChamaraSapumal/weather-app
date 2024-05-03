@@ -43,7 +43,8 @@
           <div class="card-body">
             <h3 class="card-subtitle mb-2 text-body-secondary" id="location-name"></h3>
             <span class="card-title display-2" id="temp">--</span>
-            <p class="card-text" id="txt-el"></p>
+            <img alt="--" id="weather-icon">
+            <p class="card-text h5" id="txt-el"></p>
             <span href="#" class="card-link text-danger">H:<span id="high"></span></span>
             <span href="#" class="card-link text-success">L:<span id="low"></span></span>
           </div>
@@ -57,7 +58,7 @@
           <div class="card-body">
             <span class="h5 text-body-secondary">forecast &nbsp;</span>
             <span class="card-text">Last update</span>
-            <span class="text-body-secondary" id="current-date">yyyy-mm-dd</span>
+            <span class="text-body-secondary" id="current-date">yyyy-mm-dd HH:MM</span>
 
             <div class="row pt-4">
               <div class="col-12">
@@ -75,34 +76,64 @@
       </div>
     </div>
 
-    <div class="col">
-      <div class="container-fluid">
-        <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg">
-          <div class="card-body">
-            <span class="h5 text-body-secondary">forecast &nbsp;</span>
-            <span class="card-text">Last update</span>
-            <span class="text-body-secondary" id="...">yyyy-mm-dd</span>
-            <div class="row pt-4">
-              <div class="col-12">
-                <div class="overflow-x-auto">
-                  <div class="mb-2" style="white-space: nowrap;">
-                    <ul id="..." class="d-flex list-unstyled mt-auto">
-                    </ul>
-                  </div>
+    <div class="col-md-6 ">
+      <div class="row gy-4">
+        <div class="col">
+          <div class="container">
+            <div class="card card-cover h-100 rounded-4 shadow-lg">
+              <div class="card-body">
+                <div class="mb-1">
+                  <ul id="hourly-list" class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto text-center justify-content-center ">
+                      <span class="h2 text-center justify-content-center text-primary-emphasis">Humidity </span>
+                      <img src="./asset/img/humidity.png" alt="">
+                      <h5 class="text-center fw-bold text-success-emphasis" id="humidity-el">--%</h5>
+                    </li>
+                    <li class="me-auto">
+                      <span class="h2 h2 text-center justify-content-center text-primary-emphasis">Cloud </span>
+                      <img src="./asset/img/clouds.png" alt="">
+                      <h5 class="text-center fw-bold text-success-emphasis" id="clouds-el">--%</h5>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
+
+        <div class="col">
+          <div class="container">
+            <div class="card card-cover h-100 rounded-4 shadow-lg">
+              <div class="card-body">
+                <div class="mb-2">
+                  <ul id="hourly-list" class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                      <h1>Humiby</h1>
+                    </li>
+                    <li class="me-auto">
+                      <h1>Cloud</h1>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
+  </div>
+
+
+
 
   </div>
 
 
   <!-- Footer -->
-  <div class="container">
+  <div class="container-fluid">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
       <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">

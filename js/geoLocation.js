@@ -32,6 +32,7 @@ function currentLocationWeather(latitude, longitude) {
 
       document.getElementById("location-name").innerHTML = data.location.name;
       document.getElementById("temp").innerHTML = data.current.temp_c + "&deg;";
+      document.getElementById("weather-icon").src = data.current.condition.icon;
       document.getElementById("txt-el").innerHTML = data.current.condition.text;
       document.getElementById("high").innerHTML =
         data.forecast.forecastday[0].day.maxtemp_c + "&deg;";
@@ -39,6 +40,10 @@ function currentLocationWeather(latitude, longitude) {
         data.forecast.forecastday[0].day.mintemp_c + "&deg;";
       document.getElementById("current-date").innerHTML =
         data.current.last_updated;
+
+      document.getElementById("humidity-el").innerHTML =
+        data.current.humidity + "%";
+      document.getElementById("clouds-el").innerHTML = data.current.cloud + "%";
 
       // Remove existing hourly forecast list items
       const hourlyList = document.getElementById("hourly-list");
@@ -57,7 +62,7 @@ function currentLocationWeather(latitude, longitude) {
           listItem.classList.add("border");
           listItem.classList.add("border-info");
 
-          listItem.scrollIntoView({ behavior: "auto", block: "nearest" });
+          listItem.scrollIntoView({ behavior: "auto", block: "center" });
         }
         const div = document.createElement("div");
         div.classList.add("border-end");

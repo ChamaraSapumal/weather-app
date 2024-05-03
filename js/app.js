@@ -36,11 +36,14 @@ function run() {
 
       document.getElementById("location-name").innerHTML = data.location.name;
       document.getElementById("temp").innerHTML = data.current.temp_c + "&deg;";
+      document.getElementById("weather-icon").src = data.current.condition.icon;
       document.getElementById("txt-el").innerHTML = data.current.condition.text;
       document.getElementById("high").innerHTML =
         data.forecast.forecastday[0].day.maxtemp_c + "&deg;";
       document.getElementById("low").innerHTML =
         data.forecast.forecastday[0].day.mintemp_c + "&deg;";
+      document.getElementById("humidity-el").innerHTML =
+        data.current.humidity + "%";
 
       // Remove existing hourly forecast list items
       const hourlyList = document.getElementById("hourly-list");
