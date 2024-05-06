@@ -44,6 +44,7 @@ function run() {
         data.forecast.forecastday[0].day.mintemp_c + "&deg;";
       document.getElementById("humidity-el").innerHTML =
         data.current.humidity + "%";
+      document.getElementById("clouds-el").innerHTML = data.current.cloud + "%";
 
       // Remove existing hourly forecast list items
       const hourlyList = document.getElementById("hourly-list");
