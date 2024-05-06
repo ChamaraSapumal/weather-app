@@ -44,6 +44,8 @@ function currentLocationWeather(latitude, longitude) {
       document.getElementById("humidity-el").innerHTML =
         data.current.humidity + "%";
       document.getElementById("clouds-el").innerHTML = data.current.cloud + "%";
+      document.getElementById("wind-speed").innerHTML =
+        data.current.wind_kph + " kph";
 
       // Remove existing hourly forecast list items
       const hourlyList = document.getElementById("hourly-list");
